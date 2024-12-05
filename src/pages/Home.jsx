@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import MovieCard from "../components/MovieCard";
 
 
 export default function Home() {
@@ -38,10 +39,7 @@ export default function Home() {
             <div>
                 {
                     movies.map((movie) => (
-                        <div key={movie.imdbID}>
-                            <h3>{movie.Title}</h3>
-                            <p>{movie.Year}</p>
-                        </div>
+                        <MovieCard key={movie.imdbID} movie={movie} />
                     ))
                 }
             </div>
